@@ -1,0 +1,289 @@
+/* -------------------------
+   Global Theme + Reset
+-------------------------- */
+/* ==============================
+   Global Styles & Variables
+============================== */
+:root {
+  --primary: #ff6600;
+  --secondary: #ff8533;
+  --radius: 10px;
+  --transition: all 0.3s ease;
+
+  /* Light theme colors */
+  --bg-light: #f9f9f9;
+  --text-light: #222;
+  --card-light: #ffffff;
+  --input-bg-light: #ffffff;
+  --border-light: #ddd;
+
+  /* Dark theme colors */
+  --bg-dark: #121212;
+  --text-dark: #ffffff;
+  --card-dark: #1e1e1e;
+  --input-bg-dark: #2a2a2a;
+  --border-dark: #333;
+}
+
+/* ==============================
+   Base Layout
+============================== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Container for pages */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* ==============================
+   Navbar
+============================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  padding: 15px 25px;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar button {
+  background: white;
+  color: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.navbar button:hover {
+  background: var(--secondary);
+  color: white;
+}
+
+/* ==============================
+   Cards (Property Display)
+============================== */
+.property-card {
+  background: var(--card-light);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: var(--transition);
+}
+
+body.dark-mode .property-card {
+  background: var(--card-dark);
+  box-shadow: 0 4px 16px rgba(255,255,255,0.05);
+}
+
+.property-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.property-card h3 {
+  margin-top: 10px;
+  color: var(--primary);
+}
+
+.property-card p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+/* ==============================
+   Forms (Login, Signup, Add Property)
+============================== */
+form {
+  background: var(--card-light);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 25px;
+  max-width: 450px;
+  margin: 20px auto;
+  transition: var(--transition);
+}
+
+body.dark-mode form {
+  background: var(--card-dark);
+  box-shadow: 0 4px 20px rgba(255,255,255,0.05);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  background: var(--input-bg-light);
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.4);
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background: var(--input-bg-dark);
+  border: 1px solid var(--border-dark);
+  color: var(--text-dark);
+}
+
+/* ==============================
+   Buttons
+============================== */
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background: var(--secondary);
+}
+
+/* ==============================
+   Responsive Grid for Cards
+============================== */
+.property-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ==============================
+   Footer
+============================== */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  margin-top: 40px;
+}
+
+/* ==============================
+   Dark Mode Overrides
+============================== */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode form,
+body.dark-mode .property-card {
+  background: var(--card-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode button {
+  background: var(--secondary);
+}
+
+body.dark-mode button:hover {
+  background: var(--primary);
+}
+/* =====================================
+   UNIVERSAL SMALL BUTTON STYLES
+   (for all buttons in the project)
+===================================== */
+
+button {
+  background: linear-gradient(45deg, #ff6600, #ff8800);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 14px;              /* small compact size */
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(255, 102, 0, 0.3);
+}
+
+/* Hover and click effects */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 102, 0, 0.4);
+  background: linear-gradient(45deg, #ff8800, #ffaa33);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(255, 102, 0, 0.25);
+}
+
+/* Make sure buttons adapt to dark mode */
+body.dark-mode button {
+  background: linear-gradient(45deg, #ffaa33, #ff6600);
+  color: white;
+  box-shadow: 0 2px 6px rgba(255, 153, 51, 0.3);
+}
+
+/* Add spacing for groups of buttons */
+button + button {
+  margin-left: 8px;
+}
+
+/* For special red buttons like Reset */
+button.reset-btn {
+  background: linear-gradient(45deg, #ff3300, #ff6600);
+}
+
+button.reset-btn:hover {
+  background: linear-gradient(45deg, #ff6600, #ff8800);
+}
+
+/* For disabled buttons */
+button:disabled {
+  background: #cccccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
